@@ -6,6 +6,8 @@ from sklearn.utils import shuffle
 
 from alexnet import AlexNet
 
+
+
 nb_classes = 43
 epochs = 10
 batch_size = 128
@@ -13,7 +15,11 @@ batch_size = 128
 with open('./train.p', 'rb') as f:
     data = pickle.load(f)
 
+    
+    
 X_train, X_val, y_train, y_val = train_test_split(data['features'], data['labels'], test_size=0.33, random_state=0)
+
+
 
 features = tf.placeholder(tf.float32, (None, 32, 32, 3))
 labels = tf.placeholder(tf.int64, None)
